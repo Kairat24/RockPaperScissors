@@ -14,7 +14,7 @@ public class RockPaperScissors {
    String shows the possible choices that computer will make
  */
         while (true) {
-            System.out.print("\nEnter Rock, Paper, or Scissors: ");
+            System.out.print("\nEnter Rock, Paper, or Scissors (or type 'exit' to quit): ");
             String userChoice = scanner.nextLine().trim().toLowerCase();
 
 /* System.out.print asks the user to enter "Rock", "Paper", or "Scissors".
@@ -22,6 +22,11 @@ public class RockPaperScissors {
    trim() removes the empty spaces in the beginning and the end of the input.
    toLowerCase() converts the input to lowercase.
  */
+            if (userChoice.equals("exit")) {
+                System.out.println("Thanks for playing! 👋");
+                break;
+            }
+
             int computerIndex = random.nextInt(3);
             String computerChoice = choices[computerIndex].toLowerCase();
 
@@ -49,6 +54,6 @@ public class RockPaperScissors {
         }
         /* Shows the result of Users and Computers choices
          */
-
+        scanner.close();
     }
 }
